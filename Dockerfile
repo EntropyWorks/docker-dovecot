@@ -14,5 +14,5 @@ RUN apt update && apt install -y git wget autoconf automake libtool pkg-config g
 ADD supervisord.conf /etc/supervisord.conf
 ADD rsyslog.conf /etc/rsyslog.conf
 
-EXPOSE 143 995 993 2000 1025 
+EXPOSE 143 995 993 2000 1025 4190 9090 
 CMD ["supervisord","-n","-c","/etc/supervisord.conf"]
