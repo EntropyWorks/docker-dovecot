@@ -11,7 +11,7 @@ RUN cd /opt && git clone --depth=1 https://github.com/dovecot/core && cd core &&
     git clone https://github.com/rsyslog/liblogging && cd liblogging && autoreconf -v --install && ./configure --disable-man-pages && make && make install && \
     git clone https://github.com/rsyslog/rsyslog && cd rsyslog && ./autogen.sh --enable-omstdout && make && make install && ldconfig && \
     mkdir /var/log/supervisor/ && /usr/bin/easy_install supervisor && /usr/bin/easy_install supervisor-stdout && \
-    rm -rf /opt/core && rm -rf /opt/rsyslog && rm -rf /opt/libfastjson
+    rm -rf /opt/core && rm -rf /opt/rsyslog && rm -rf /opt/libfastjson && mkdir -p /var/lib/dovecot/sieve && chmod 777 -R /var/lib/dovecot/sieve
 
 ADD supervisord.conf /etc/supervisord.conf
 ADD rsyslog.conf /etc/rsyslog.conf
